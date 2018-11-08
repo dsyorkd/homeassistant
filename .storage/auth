@@ -1,0 +1,122 @@
+{
+    "data": {
+        "credentials": [
+            {
+                "auth_provider_id": null,
+                "auth_provider_type": "homeassistant",
+                "data": {
+                    "username": "spencer"
+                },
+                "id": "7e7139aa8efe45c1aaca3d42be080136",
+                "user_id": "ef1b5cd82eae4ca1a575bb6635b178ad"
+            },
+            {
+                "auth_provider_id": null,
+                "auth_provider_type": "homeassistant",
+                "data": {
+                    "username": "britani"
+                },
+                "id": "8d275de5352f4f2ba3b868c9ad5f6ed7",
+                "user_id": "a87c250e3a88481a95be5f18a4b83a22"
+            },
+            {
+                "auth_provider_id": null,
+                "auth_provider_type": "homeassistant",
+                "data": {
+                    "username": "addison"
+                },
+                "id": "3362c3637310420a896b2ecc5f521d22",
+                "user_id": "aad4282c007142be858e0733be4166d3"
+            },
+            {
+                "auth_provider_id": null,
+                "auth_provider_type": "homeassistant",
+                "data": {
+                    "username": "kharington"
+                },
+                "id": "81847abc68c2478fba9878ccd3f21f5f",
+                "user_id": "c81924fa7d414da4a6229133108abcfc"
+            }
+        ],
+        "groups": [
+            {
+                "id": "e2f15161d10348718bdf8e27c5c4672b",
+                "name": "All Access"
+            }
+        ],
+        "refresh_tokens": [
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "http://10.100.0.44:8123/",
+                "client_name": null,
+                "created_at": "2018-11-04T18:34:39.503679+00:00",
+                "id": "7038a09e1b864f8799d1a7c29ef59f07",
+                "jwt_key": "20b64fd01f379114c3d316a3e194bf837d5aa692fe783821e621f8572dd3ebdfc65a65835398e786b6730640eba4d1044ba2926a1254eab5f0ef70bd3c781d55",
+                "last_used_at": "2018-11-05T05:21:50.555471+00:00",
+                "last_used_ip": "10.100.0.32",
+                "token": "d755b3192813f082cba374b6e684b0fa686d5623abb20bfd26603a93af09f35b668d8f4f027415fe444a21e3a9ed7b74399697f2605482165f4609396ea1fac1",
+                "token_type": "normal",
+                "user_id": "ef1b5cd82eae4ca1a575bb6635b178ad"
+            },
+            {
+                "access_token_expiration": 1800.0,
+                "client_icon": null,
+                "client_id": "http://10.100.0.44:8123/",
+                "client_name": null,
+                "created_at": "2018-11-05T04:30:52.279280+00:00",
+                "id": "72bd97172c414b89b8d5669bde4c1f9e",
+                "jwt_key": "52818725fb721d29ad66e8fd92879a4471086334dd8a0a2264b3f52ffd862dd6050e525e9631154a4a1debf6b978328a83bd830db769c2c036daa108c463b440",
+                "last_used_at": "2018-11-05T05:21:50.560440+00:00",
+                "last_used_ip": "10.100.0.32",
+                "token": "d92721e30cea679a10ead20bacc1f2b559326077e482922db3bd37df397968b4837a17d79d795fc6447c99d1fc505d20dc1cee9f5f0a4555846f7545305d93af",
+                "token_type": "normal",
+                "user_id": "ef1b5cd82eae4ca1a575bb6635b178ad"
+            }
+        ],
+        "users": [
+            {
+                "group_ids": [
+                    "e2f15161d10348718bdf8e27c5c4672b"
+                ],
+                "id": "ef1b5cd82eae4ca1a575bb6635b178ad",
+                "is_active": true,
+                "is_owner": true,
+                "name": "Spencer",
+                "system_generated": false
+            },
+            {
+                "group_ids": [
+                    "e2f15161d10348718bdf8e27c5c4672b"
+                ],
+                "id": "a87c250e3a88481a95be5f18a4b83a22",
+                "is_active": true,
+                "is_owner": false,
+                "name": "Britani",
+                "system_generated": false
+            },
+            {
+                "group_ids": [
+                    "e2f15161d10348718bdf8e27c5c4672b"
+                ],
+                "id": "aad4282c007142be858e0733be4166d3",
+                "is_active": true,
+                "is_owner": false,
+                "name": "Addison",
+                "system_generated": false
+            },
+            {
+                "group_ids": [
+                    "e2f15161d10348718bdf8e27c5c4672b"
+                ],
+                "id": "c81924fa7d414da4a6229133108abcfc",
+                "is_active": true,
+                "is_owner": false,
+                "name": "Kharington",
+                "system_generated": false
+            }
+        ]
+    },
+    "key": "auth",
+    "version": 1
+}

@@ -1,0 +1,8 @@
+{
+    "data": {
+        "alexa_enabled": true,
+        "google_enabled": false
+    },
+    "key": "cloud",
+    "version": 1
+}

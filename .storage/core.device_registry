@@ -1,0 +1,26 @@
+{
+    "data": {
+        "devices": [
+            {
+                "config_entries": [
+                    "decf2c18cfd94f04a1f300b65f1f6f42"
+                ],
+                "connections": [
+                    [
+                        "mac",
+                        "00:18:8b:7b:59:73"
+                    ]
+                ],
+                "hub_device_id": null,
+                "id": "e86ea6964c044e81878878b3bb8133ac",
+                "identifiers": [],
+                "manufacturer": "Ubiquiti",
+                "model": "UniFi Controller",
+                "name": "UniFi Controller",
+                "sw_version": null
+            }
+        ]
+    },
+    "key": "core.device_registry",
+    "version": 1
+}

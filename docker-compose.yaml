@@ -1,0 +1,119 @@
+version: "3.4"
+services:
+  homeassistant:
+    image: homeassistant/home-assistant:latest
+    depends_on:
+      mqtt:
+        condition: service_started
+      influxdb:
+        condition: service_healthy
+    volumes:
+      - /storage/apps/homeassistant:/config
+    privileged: true
+    network_mode: host
+    restart: always
+    environment:
+      - TZ=America/Chicago
+
+  homebridge:
+    image: oznu/homebridge:latest
+    container_name: "homebridge"
+    restart: always
+    depends_on:
+      home-assistant:
+        condition: service_healthy
+    network_mode: host
+    environment:
+      - TZ=America/Chicago
+      - PGID=1001
+      - PUID= 982
+    volumes:
+      - /storage/apps/homebridge:/homebridge
+
+  dasher:
+    image: clemenstyp/dasher-docker:latest
+    container_name: "Dasher"
+    restart: always
+    depends_on:
+      homebridge:
+        condition: service_started
+    volumes:
+      - /storage/apps/dasher:/root/dasher/config
+    network_mode: "host"
+
+  unifi:
+    image: jacobalbery/unifi:latest
+    container_name: "Unfi"
+    restart: always
+    volumes:
+      - /storage/apps/unifi/data:/unifi/data
+    ports:
+      - 3478:3478/udp
+      - 10001:10001/udp
+      - 6789:6789/tcp
+      - 8080:8080/tcp
+      - 8880:8880/tcp
+      - 8443:8443/tcp
+      - 8843:8843/tcp
+    environment:
+      - TZ=America/Chicago
+    network_mode: "host"
+
+  mqtt:
+    image: eclipse-mosquitto:latest
+    restart: unless-stopped
+    volumes:
+      - /storage/apps/homeassistant/mqtt/config:/mosquitto/config:ro
+      - /storage/apps/homeassistant/mqtt/data:/mosquitto/data
+      - /storage/apps/homeassistant/mqtt/log:/mosquitto/log
+      
+    ports:
+      - 1883:1883
+      - 9001:9001
+    environment:
+      - TZ=America/Chicago
+
+  influxdb:
+    image: influxdb:latest
+    container_name: "influxdb"
+    healthcheck:
+      test: ["CMD", "curl", "-sI", "http://127.0.0.1:8086/ping"]
+      interval: 30s
+      timeout: 1s
+      retries: 24
+    network_mode: host
+    volumes:
+      - /storage/apps/influxdb:/var/lib/influxdb
+    environment:
+      PRE_CREATE_DB: "home-assistant"
+      - TZ=America/Chicago
+    ports:
+      - 8086:8086
+      - 8083:8083
+    restart: on-failure
+
+  grafana:
+    image: grafana/grafana
+    restart: on-failure
+    network_mode: "host"
+    depends_on:
+      influxdb: service_healthy
+    environment:
+      - TZ=America/Chicago
+      - PGID=1001
+      - PUID=982
+    volumes:
+      - /storage/apps/grafana/etc:/etc/grafana
+      - /storage/apps/grafana/data:/var/lib/grafana
+    ports:
+      - 3000:3000
+
+  appdaemon:
+    image: torkildr/rpi-appdaemon:latest
+    volumes:
+      - /storage/apps/homeassistant/appdaemon:/conf
+      - /storage/apps/homeassistant/src/dehydrated/certs/<username>.duckdns.org/fullchain.pem:/var/certs/fullchain.pem:ro
+      - /storage/apps/homeassistant/src/dehydrated/certs/<username>.duckdns.org/privkey.pem:/var/certs/privkey.pem:ro
+    ports:
+      - 5050:5050
+      - 5000:5000

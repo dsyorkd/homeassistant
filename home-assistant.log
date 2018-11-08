@@ -1,0 +1,1 @@
+2018-11-07 06:06:27 ERROR (MainThread) [homeassistant.bootstrap] Error loading /config/configuration.yaml: Secret http_base_url not defined

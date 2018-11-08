@@ -1,0 +1,36 @@
+{
+    "data": {
+        "entries": [
+            {
+                "connection_class": "cloud_push",
+                "data": {},
+                "domain": "ios",
+                "entry_id": "df1735bd5aa4424e8f46c98c209862bc",
+                "source": "user",
+                "title": "Home Assistant iOS",
+                "version": 1
+            },
+            {
+                "connection_class": "local_poll",
+                "data": {
+                    "controller": {
+                        "host": "10.100.0.10",
+                        "password": "Myaddie1",
+                        "port": 8443,
+                        "site": "default",
+                        "username": "syork",
+                        "verify_ssl": false
+                    },
+                    "poe_control": true
+                },
+                "domain": "unifi",
+                "entry_id": "decf2c18cfd94f04a1f300b65f1f6f42",
+                "source": "user",
+                "title": "Home",
+                "version": 1
+            }
+        ]
+    },
+    "key": "core.config_entries",
+    "version": 1
+}
