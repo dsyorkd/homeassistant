@@ -98,12 +98,12 @@ history:
       - sensor.since_last_boot
       - sensor.time
       - sensor.ha_uptime
-  mqtt:
-    broker: 127.0.0.1
-    port: 1883
-    client_id: home-assistant-syork
-    username: !secret MQTT_username
-    password: !secret MQTT_password
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+  client_id: home-assistant-syork
+  username: !secret MQTT_username
+  password: !secret MQTT_password
 
 # View all events in a logbook
 logbook:
