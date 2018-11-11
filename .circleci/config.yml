@@ -10,7 +10,6 @@ jobs:
           name: Check config
           command: |
             touch fake.pem
-            mv extras/github_resources/secrets_redacted.yaml secrets.yaml
             python3.6 -m venv .
             source bin/activate
             pip3 install --pre --upgrade homeassistant
